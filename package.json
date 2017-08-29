@@ -1,0 +1,24 @@
+{
+  "name": "mumbairains",
+  "version": "1.0.0",
+  "description": "Crowdsourced list of resources for people affected by the #MumbaiRains.",
+  "main": "build.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MumbaiRains/mumbairains.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MumbaiRains/mumbairains.org/issues"
+  },
+  "homepage": "https://github.com/MumbaiRains/mumbairains.org#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "jsonfile": "^2.2.3",
+    "tabletop": "^1.4.2"
+  }
+}
