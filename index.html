@@ -131,13 +131,22 @@
     var getRows = function(obj) {
       var rows=obj['rows'];
       var idx = obj['columns'].indexOf("tweetid");
+      var new_rows = []
       for (var i = 0; i < rows.length; i++) {
         if(rows[i][idx].length>0) {
           var row = '<a href="https://twitter.com/karthikb351/'+rows[i][idx]+'">Tweet link</a>';
           rows[i][idx]=row;
         }
+
+        var c = []
+        for (var x = 0; x < rows[i].length; x++) {
+          if (inArray(x, [0,1,3,4,16])) {
+            c.push(rows[i][x])
+          }
+        }
+        new_rows.push(c);
       };
-      return rows;
+      return new_rows;
 
     };
 
