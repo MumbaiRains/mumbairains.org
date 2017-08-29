@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/leaflet.markercluster-src.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.0/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_b799ddb7cbde47fa84cfeb9b667167b7 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_b799ddb7cbde47fa84cfeb9b667167b7" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var southWest = L.latLng(-90, -180);
+                var northEast = L.latLng(90, 180);
+                var bounds = L.latLngBounds(southWest, northEast);
+            
+
+            var map_b799ddb7cbde47fa84cfeb9b667167b7 = L.map(
+                                  'map_b799ddb7cbde47fa84cfeb9b667167b7',
+                                  {center: [19.076,72.8777],
+                                  zoom: 12,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_d918c6b04b5c4ea1939fe3ee72d5a694 = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    continuousWorld: false,
+                    noWrap: false,
+                    attribution: 'Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+                    detectRetina: false
+                    }
+                ).addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+
+        
+    
+
+            var marker_055b33f6521847498e34285a61e21eec = L.marker(
+                [19.1074911,72.9017603],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_a2995619afab4ccba65d6d6e2e93a2ac = L.popup({maxWidth: '300'});
+
+            
+                var html_982c163b8f814b7190c1a9bdb6e47ead = $('<div id="html_982c163b8f814b7190c1a9bdb6e47ead" style="width: 100.0%; height: 100.0%;">Location: Chandivali, Powai, Mumbai, Maharashtra, India Time: 29 Aug, 10:17 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @ayushbaheti How to Contact: @ayushbaheti how many people for this: 3</div>')[0];
+                popup_a2995619afab4ccba65d6d6e2e93a2ac.setContent(html_982c163b8f814b7190c1a9bdb6e47ead);
+            
+
+            marker_055b33f6521847498e34285a61e21eec.bindPopup(popup_a2995619afab4ccba65d6d6e2e93a2ac);
+
+            
+        
+    
+
+            var marker_d1a4356c42ea40e09429b66e88fdce96 = L.marker(
+                [19.1074911,72.9017603],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_7f4487c7e84946898501502426521581 = L.popup({maxWidth: '300'});
+
+            
+                var html_0a3c479d8d0e4884be4673c0f3125a3d = $('<div id="html_0a3c479d8d0e4884be4673c0f3125a3d" style="width: 100.0%; height: 100.0%;">Location: Chandivali, Powai, Mumbai, Maharashtra, India Time: 29 Aug, 10:17 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @ayushbaheti How to Contact: @ayushbaheti how many people for this: 3</div>')[0];
+                popup_7f4487c7e84946898501502426521581.setContent(html_0a3c479d8d0e4884be4673c0f3125a3d);
+            
+
+            marker_d1a4356c42ea40e09429b66e88fdce96.bindPopup(popup_7f4487c7e84946898501502426521581);
+
+            
+        
+    
+
+            var marker_0d11666e13ed49f4aa1798ab59cdc34c = L.marker(
+                [19.1283058,72.8302427],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_b1a7144a79d0438da261bfec1aa7d056 = L.popup({maxWidth: '300'});
+
+            
+                var html_223bf038969041a080543a83191593fb = $('<div id="html_223bf038969041a080543a83191593fb" style="width: 100.0%; height: 100.0%;">Location: J P Road, Andheri (W), Near Indian Oil Nagar Junction, Mumbai, Maharashtra 400053, India Time: 29 Aug, 10:15 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @happygoakki How to Contact: @happygoakki how many people for this: 5</div>')[0];
+                popup_b1a7144a79d0438da261bfec1aa7d056.setContent(html_223bf038969041a080543a83191593fb);
+            
+
+            marker_0d11666e13ed49f4aa1798ab59cdc34c.bindPopup(popup_b1a7144a79d0438da261bfec1aa7d056);
+
+            
+        
+    
+
+            var marker_5cc199ed13e5402ca8944a310969c637 = L.marker(
+                [19.164839,72.938107],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_980e985fb622483995be5bf4904cae0c = L.popup({maxWidth: '300'});
+
+            
+                var html_ce9d2bf1277b484e9c36341e9b033a65 = $('<div id="html_ce9d2bf1277b484e9c36341e9b033a65" style="width: 100.0%; height: 100.0%;">Location: 1, Om Udyog, Next To Kotak Mahindra Bank, Near Sonapur Signal, L.B.S. Marg, Mulund West, Mumbai, Maharashtra 400080, India Time: 29 Aug, 10:15 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी Who to contact: @Jayshrek How to Contact: @Jayshrek how many people for this: 2</div>')[0];
+                popup_980e985fb622483995be5bf4904cae0c.setContent(html_ce9d2bf1277b484e9c36341e9b033a65);
+            
+
+            marker_5cc199ed13e5402ca8944a310969c637.bindPopup(popup_980e985fb622483995be5bf4904cae0c);
+
+            
+        
+    
+
+            var marker_27f8454a6ded48c1b2a5a65a51c2dea8 = L.marker(
+                [19.1509655,72.8831294],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_f929426897f14b2eb3a7af5b0239f3ba = L.popup({maxWidth: '300'});
+
+            
+                var html_a6be950576694d799b97f259ac70e424 = $('<div id="html_a6be950576694d799b97f259ac70e424" style="width: 100.0%; height: 100.0%;">Location: Aarey Colony, Goregaon East, Mumbai, Maharashtra, India Time: 29 Aug, 10:11 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: 919884135419 How to Contact: 919884135419 how many people for this: 2 men.</div>')[0];
+                popup_f929426897f14b2eb3a7af5b0239f3ba.setContent(html_a6be950576694d799b97f259ac70e424);
+            
+
+            marker_27f8454a6ded48c1b2a5a65a51c2dea8.bindPopup(popup_f929426897f14b2eb3a7af5b0239f3ba);
+
+            
+        
+    
+
+            var marker_2873716ce3e840ae9cff66402f01e815 = L.marker(
+                [19.0606917,72.8362497],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_426d6960a22645218e716974541cd362 = L.popup({maxWidth: '300'});
+
+            
+                var html_d5d58755a1754241a3855d7bdad0d77a = $('<div id="html_d5d58755a1754241a3855d7bdad0d77a" style="width: 100.0%; height: 100.0%;">Location: Bandra West, Mumbai, Maharashtra, India Time: 29 Aug, 10:11 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @danish_k12 How to Contact: @danish_k12 how many people for this: Not mentioned</div>')[0];
+                popup_426d6960a22645218e716974541cd362.setContent(html_d5d58755a1754241a3855d7bdad0d77a);
+            
+
+            marker_2873716ce3e840ae9cff66402f01e815.bindPopup(popup_426d6960a22645218e716974541cd362);
+
+            
+        
+    
+
+            var marker_66732978eb91423da0a0129355560d53 = L.marker(
+                [19.1638926,72.9376889],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_d5ac22e2471c46afa28f0b8ea67da609 = L.popup({maxWidth: '300'});
+
+            
+                var html_94b71e20e99f49d099d40a142b7ab97f = $('<div id="html_94b71e20e99f49d099d40a142b7ab97f" style="width: 100.0%; height: 100.0%;">Location: Near Link Road, Lal Bahadur Shastri Marg, Salpa Devi Pada, Mulund West, Mumbai, Maharashtra 400080, India Time: 29 Aug, 10:11 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी Who to contact: 9820303448 How to Contact: 9820303448 how many people for this: 2</div>')[0];
+                popup_d5ac22e2471c46afa28f0b8ea67da609.setContent(html_94b71e20e99f49d099d40a142b7ab97f);
+            
+
+            marker_66732978eb91423da0a0129355560d53.bindPopup(popup_d5ac22e2471c46afa28f0b8ea67da609);
+
+            
+        
+    
+
+            var marker_a4a4227bb42943e8aadcb33517110eff = L.marker(
+                [19.0606917,72.8362497],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_1440fe13b1ff44139c701ffe8f1bbfda = L.popup({maxWidth: '300'});
+
+            
+                var html_29e77c888f5e412a99d05b862c8a2128 = $('<div id="html_29e77c888f5e412a99d05b862c8a2128" style="width: 100.0%; height: 100.0%;">Location: Bandra West, Mumbai, Maharashtra, India Time: 29 Aug, 10:09 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: @deevyah How to Contact: @deevyah how many people for this: 3-4</div>')[0];
+                popup_1440fe13b1ff44139c701ffe8f1bbfda.setContent(html_29e77c888f5e412a99d05b862c8a2128);
+            
+
+            marker_a4a4227bb42943e8aadcb33517110eff.bindPopup(popup_1440fe13b1ff44139c701ffe8f1bbfda);
+
+            
+        
+    
+
+            var marker_f6a998472a8c47e99a00fa14b882dcbb = L.marker(
+                [19.2282448,72.9709641],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_2054783f0e5e439db7542175d8834dfc = L.popup({maxWidth: '300'});
+
+            
+                var html_6a8f5b2fc85f47f0be92879fb413d6f2 = $('<div id="html_6a8f5b2fc85f47f0be92879fb413d6f2" style="width: 100.0%; height: 100.0%;">Location: Smt Gladys Alvares Rd, Manpada, Thane West, Thane, Maharashtra 400607, India Time: 29 Aug, 10:09 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: 7506106051 How to Contact: 7506106051 how many people for this: 4-6</div>')[0];
+                popup_2054783f0e5e439db7542175d8834dfc.setContent(html_6a8f5b2fc85f47f0be92879fb413d6f2);
+            
+
+            marker_f6a998472a8c47e99a00fa14b882dcbb.bindPopup(popup_2054783f0e5e439db7542175d8834dfc);
+
+            
+        
+    
+
+            var marker_57fc75bcca1f4a0aae2e7be955b8ac37 = L.marker(
+                [36.1341639,-85.5231077],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_664b674c5cca410bb037c8fc70db72fc = L.popup({maxWidth: '300'});
+
+            
+                var html_8e760ce1fcb54037b4efd9292243d7c0 = $('<div id="html_8e760ce1fcb54037b4efd9292243d7c0" style="width: 100.0%; height: 100.0%;">Location: Miracle Rd, Cookeville, TN 38506, USA Time: 29 Aug, 10:07 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: @yadav91rahul How to Contact: @yadav91rahul how many people for this: 2-3</div>')[0];
+                popup_664b674c5cca410bb037c8fc70db72fc.setContent(html_8e760ce1fcb54037b4efd9292243d7c0);
+            
+
+            marker_57fc75bcca1f4a0aae2e7be955b8ac37.bindPopup(popup_664b674c5cca410bb037c8fc70db72fc);
+
+            
+        
+    
+
+            var marker_eda411ac435442ca89c6adc2e75b48e7 = L.marker(
+                [19.1196773,72.9050809],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_cda59a9d53fd4d0ba881b6ffd4524006 = L.popup({maxWidth: '300'});
+
+            
+                var html_1748811fc3684376aa5e3a7d6db77861 = $('<div id="html_1748811fc3684376aa5e3a7d6db77861" style="width: 100.0%; height: 100.0%;">Location: Powai, Mumbai, Maharashtra, India Time: 29 Aug, 10:04 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: @sugandha10 How to Contact: @sugandha10 how many people for this: 1-2</div>')[0];
+                popup_cda59a9d53fd4d0ba881b6ffd4524006.setContent(html_1748811fc3684376aa5e3a7d6db77861);
+            
+
+            marker_eda411ac435442ca89c6adc2e75b48e7.bindPopup(popup_cda59a9d53fd4d0ba881b6ffd4524006);
+
+            
+        
+    
+
+            var marker_c4dc113962004aeb85990e5e8f2b9932 = L.marker(
+                [19.1196178,72.9024486],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_6f4eae5a34a440539aa51d4d602c9b5c = L.popup({maxWidth: '300'});
+
+            
+                var html_cfc61cad308d4539931acceab166ee24 = $('<div id="html_cfc61cad308d4539931acceab166ee24" style="width: 100.0%; height: 100.0%;">Location: JVLR, Powai, Mumbai, Maharashtra, India Time: 29 Aug, 10:03 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: @sourabhdj How to Contact: @sourabhdj how many people for this: 2-3</div>')[0];
+                popup_6f4eae5a34a440539aa51d4d602c9b5c.setContent(html_cfc61cad308d4539931acceab166ee24);
+            
+
+            marker_c4dc113962004aeb85990e5e8f2b9932.bindPopup(popup_6f4eae5a34a440539aa51d4d602c9b5c);
+
+            
+        
+    
+
+            var marker_39ddfdd4e609412884ee7ce94b1b33d9 = L.marker(
+                [19.0820368,72.837556],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_7a354a6e67f346eeb7bbfe2e476cbf44 = L.popup({maxWidth: '300'});
+
+            
+                var html_2ac3cea59c6048f088cc1919ebd9dd62 = $('<div id="html_2ac3cea59c6048f088cc1919ebd9dd62" style="width: 100.0%; height: 100.0%;">Location: sushila baug society, 400047, Navyug Colony, Santacruz West, Mumbai, Maharashtra 400047, India Time: 29 Aug, 10:02 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: 9967122750 How to Contact: 9967122750 how many people for this: 4</div>')[0];
+                popup_7a354a6e67f346eeb7bbfe2e476cbf44.setContent(html_2ac3cea59c6048f088cc1919ebd9dd62);
+            
+
+            marker_39ddfdd4e609412884ee7ce94b1b33d9.bindPopup(popup_7a354a6e67f346eeb7bbfe2e476cbf44);
+
+            
+        
+    
+
+            var marker_841f688f23b14cf3aff83d458d2aa9d9 = L.marker(
+                [19.2245221,72.958772],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_f6493e4bf50b40dca4919142ba76fd7d = L.popup({maxWidth: '300'});
+
+            
+                var html_545cf0cf0b16453fb8bd2a1a3352a1ac = $('<div id="html_545cf0cf0b16453fb8bd2a1a3352a1ac" style="width: 100.0%; height: 100.0%;">Location: Kokanipada, Gawand Baug, Thane West, Thane, Maharashtra 400610, India Time: 29 Aug, 10:01 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @ruchir89 How to Contact: @ruchir89 how many people for this: 3</div>')[0];
+                popup_f6493e4bf50b40dca4919142ba76fd7d.setContent(html_545cf0cf0b16453fb8bd2a1a3352a1ac);
+            
+
+            marker_841f688f23b14cf3aff83d458d2aa9d9.bindPopup(popup_f6493e4bf50b40dca4919142ba76fd7d);
+
+            
+        
+    
+
+            var marker_9dd26ed6e8c846999c7eceb7ccc8d45f = L.marker(
+                [19.1464934,72.8236736],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_2c4e3a84669e4ac2a3ad14b8626c4f03 = L.popup({maxWidth: '300'});
+
+            
+                var html_05598dc5e3404b9eaef37b64f9a4d53a = $('<div id="html_05598dc5e3404b9eaef37b64f9a4d53a" style="width: 100.0%; height: 100.0%;">Location: shop no 1&amp; 2,ground floor,green fields apt,, Lokhandwala Complex, Andheri West, Mumbai, Maharashtra 400053, India Time: 29 Aug, 9:59 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी Who to contact: 9819993141/9930125521/9619980479 How to Contact: 9819993141/9930125521/9619980479 how many people for this: 10 to 30</div>')[0];
+                popup_2c4e3a84669e4ac2a3ad14b8626c4f03.setContent(html_05598dc5e3404b9eaef37b64f9a4d53a);
+            
+
+            marker_9dd26ed6e8c846999c7eceb7ccc8d45f.bindPopup(popup_2c4e3a84669e4ac2a3ad14b8626c4f03);
+
+            
+        
+    
+
+            var marker_1e7b8fdabeb740f2a5f03122fbfa6df0 = L.marker(
+                [28.2128398,76.8209186],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_b33087a9051b4d9aa1b661fbbe274fec = L.popup({maxWidth: '300'});
+
+            
+                var html_a267ea15ed334dfd9e54f65c99c6db5f = $('<div id="html_a267ea15ed334dfd9e54f65c99c6db5f" style="width: 100.0%; height: 100.0%;">Location: Maheshwari, Garhi Alawalpur, Haryana, India Time: 29 Aug, 9:59 PM What is avalabile : Shelter/रहने की जगह/आसरा Who to contact: 9833029015 How to Contact: 9833029015 how many people for this: 2</div>')[0];
+                popup_b33087a9051b4d9aa1b661fbbe274fec.setContent(html_a267ea15ed334dfd9e54f65c99c6db5f);
+            
+
+            marker_1e7b8fdabeb740f2a5f03122fbfa6df0.bindPopup(popup_b33087a9051b4d9aa1b661fbbe274fec);
+
+            
+        
+    
+
+            var marker_6b9ab5262cb64b5c9846482c8df444b8 = L.marker(
+                [19.2373608,72.8412431],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_6a45f6d2d094440cb7caa5fc26f40526 = L.popup({maxWidth: '300'});
+
+            
+                var html_45a35b8f6cb14162a97895d56eee29b5 = $('<div id="html_45a35b8f6cb14162a97895d56eee29b5" style="width: 100.0%; height: 100.0%;">Location: New Link Rd, Borivali West, Mumbai, Maharashtra 400091, India Time: 29 Aug, 9:52 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी, Shelter/रहने की जगह/आसरा Who to contact: @tannnnnyyy How to Contact: @tannnnnyyy how many people for this: 2-3</div>')[0];
+                popup_6a45f6d2d094440cb7caa5fc26f40526.setContent(html_45a35b8f6cb14162a97895d56eee29b5);
+            
+
+            marker_6b9ab5262cb64b5c9846482c8df444b8.bindPopup(popup_6a45f6d2d094440cb7caa5fc26f40526);
+
+            
+        
+    
+
+            var marker_cde593bc241148349df199b8d88998cd = L.marker(
+                [19.0971373,72.8403925],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_6649602d1ccc46a6ba2a6a90b6cc68d1 = L.popup({maxWidth: '300'});
+
+            
+                var html_e90dfdff81db4bb28dcbfe2ac034a2f0 = $('<div id="html_e90dfdff81db4bb28dcbfe2ac034a2f0" style="width: 100.0%; height: 100.0%;">Location: 90-A, VP Road, LIC Colony, Suresh Colony, Vile Parle West, Mumbai, Maharashtra 400056, India Time: 29 Aug, 9:46 PM What is avalabile : Food &amp; Water/भोजन और पानी/अन्न आणि पाणी Who to contact: @Dhruvis How to Contact: @Dhruvis how many people for this: 5</div>')[0];
+                popup_6649602d1ccc46a6ba2a6a90b6cc68d1.setContent(html_e90dfdff81db4bb28dcbfe2ac034a2f0);
+            
+
+            marker_cde593bc241148349df199b8d88998cd.bindPopup(popup_6649602d1ccc46a6ba2a6a90b6cc68d1);
+
+            
+        
+    
+
+            var marker_a3327b72cd4745b59c541c6ab8313c1b = L.marker(
+                [19.1917729,72.8382275],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_9ab3e8fe19cd4b02a62159113d3a940e = L.popup({maxWidth: '300'});
+
+            
+                var html_dec4654deab9413b85dd16ad15056867 = $('<div id="html_dec4654deab9413b85dd16ad15056867" style="width: 100.0%; height: 100.0%;">Location: D Monte Ln, Orlem, Kanchpada, Malad West, Mumbai, Maharashtra 400064, India Time: 29 Aug, 9:41 PM What is avalabile : Food &amp; Water/, Shelter Who to contact: 9590564796 How to Contact: 9590564796 how many people for this: 5</div>')[0];
+                popup_9ab3e8fe19cd4b02a62159113d3a940e.setContent(html_dec4654deab9413b85dd16ad15056867);
+            
+
+            marker_a3327b72cd4745b59c541c6ab8313c1b.bindPopup(popup_9ab3e8fe19cd4b02a62159113d3a940e);
+
+            
+        
+    
+
+            var marker_2bb6969e27ac4bdf874614a9d68f8e57 = L.marker(
+                [19.1190749,72.8951151],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_33f9eb96bd0c460eaa96437006f52694 = L.popup({maxWidth: '300'});
+
+            
+                var html_303f816c9a3a4f168a22b44e509e0d13 = $('<div id="html_303f816c9a3a4f168a22b44e509e0d13" style="width: 100.0%; height: 100.0%;">Location: Raheja Vihar, Chandivali, Powai, Mumbai, Maharashtra 400076, India Time: 29 Aug, 9:39 PM What is avalabile : Food &amp; Water/, Shelter Who to contact: 919840120994 How to Contact: 919840120994 how many people for this: 5</div>')[0];
+                popup_33f9eb96bd0c460eaa96437006f52694.setContent(html_303f816c9a3a4f168a22b44e509e0d13);
+            
+
+            marker_2bb6969e27ac4bdf874614a9d68f8e57.bindPopup(popup_33f9eb96bd0c460eaa96437006f52694);
+
+            
+        
+    
+
+            var marker_4b869ea568ba494c9483ce7b49eaebfc = L.marker(
+                [19.2179138,72.8341234],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_9c08efaef6084d56b971427c340739ae = L.popup({maxWidth: '300'});
+
+            
+                var html_323269fe606049598e03d0c6d91d9924 = $('<div id="html_323269fe606049598e03d0c6d91d9924" style="width: 100.0%; height: 100.0%;">Location: RDP 7, Shivkrupa CHS, RDP 8, Charkop Sector 6, Kandiwali West, Mumbai, Maharashtra 400067, India Time: 29 Aug, 9:38 PM What is avalabile : Shelter Who to contact: @oddtazz How to Contact: @oddtazz how many people for this: 3</div>')[0];
+                popup_9c08efaef6084d56b971427c340739ae.setContent(html_323269fe606049598e03d0c6d91d9924);
+            
+
+            marker_4b869ea568ba494c9483ce7b49eaebfc.bindPopup(popup_9c08efaef6084d56b971427c340739ae);
+
+            
+        
+    
+
+            var marker_20cc97096da1420199e3867484130b26 = L.marker(
+                [19.0868142,72.8374722],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_629eeb8718b94dda87e2bbf81d1f9a6f = L.popup({maxWidth: '300'});
+
+            
+                var html_c840ff63d0684f1ebed30c568725be75 = $('<div id="html_c840ff63d0684f1ebed30c568725be75" style="width: 100.0%; height: 100.0%;">Location: Nabard Park, Swami Vivekanand Rd, Khira Nagar, Santacruz West, Mumbai, Maharashtra 400054, India Time: 29 Aug, 9:38 PM What is avalabile : Shelter Who to contact: 9665046622 How to Contact: 9665046622 how many people for this: 4</div>')[0];
+                popup_629eeb8718b94dda87e2bbf81d1f9a6f.setContent(html_c840ff63d0684f1ebed30c568725be75);
+            
+
+            marker_20cc97096da1420199e3867484130b26.bindPopup(popup_629eeb8718b94dda87e2bbf81d1f9a6f);
+
+            
+        
+    
+
+            var marker_3885bbe987fb49d5b201f0db7584f9db = L.marker(
+                [19.1688179,72.9363751],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_d38c7dbc6d004f5d8f58029faf2efe32 = L.popup({maxWidth: '300'});
+
+            
+                var html_13d09d2707354f34a9577d0e103100fa = $('<div id="html_13d09d2707354f34a9577d0e103100fa" style="width: 100.0%; height: 100.0%;">Location: Marathon Ave, Moti Nagar, Mulund Colony, Mumbai, Maharashtra 400082, India Time: 29 Aug, 9:33 PM What is avalabile : Shelter Who to contact: 828576770, @GreatEmuWar How to Contact: 828576770, @GreatEmuWar how many people for this: 4</div>')[0];
+                popup_d38c7dbc6d004f5d8f58029faf2efe32.setContent(html_13d09d2707354f34a9577d0e103100fa);
+            
+
+            marker_3885bbe987fb49d5b201f0db7584f9db.bindPopup(popup_d38c7dbc6d004f5d8f58029faf2efe32);
+
+            
+        
+    
+
+            var marker_e6098be988e74a3283df9300a9aac6d8 = L.marker(
+                [19.0815087,72.8376755],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_9d1bac1a5fc04b50ac692402114085a8 = L.popup({maxWidth: '300'});
+
+            
+                var html_74b4b7d7f9484420bcbc4e8e2a25a7b4 = $('<div id="html_74b4b7d7f9484420bcbc4e8e2a25a7b4" style="width: 100.0%; height: 100.0%;">Location: Santacruz West, Mumbai, Maharashtra, India Time: 29 Aug, 9:33 PM What is avalabile : Food / Water Who to contact: 9820604005 How to Contact: 9820604005 how many people for this: 4-5</div>')[0];
+                popup_9d1bac1a5fc04b50ac692402114085a8.setContent(html_74b4b7d7f9484420bcbc4e8e2a25a7b4);
+            
+
+            marker_e6098be988e74a3283df9300a9aac6d8.bindPopup(popup_9d1bac1a5fc04b50ac692402114085a8);
+
+            
+        
+    
+
+            var marker_364f390a75724f10946659f7234ed82c = L.marker(
+                [19.1147318,72.9093654],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_c9430bd0bc144030a0436899f0c5baa6 = L.popup({maxWidth: '300'});
+
+            
+                var html_5d4330d5a81a4716bf034c5899940fdb = $('<div id="html_5d4330d5a81a4716bf034c5899940fdb" style="width: 100.0%; height: 100.0%;">Location: Near Hiranandani Garden, Cliff Ave, Powai, Mumbai, Maharashtra 400076, India Time: 29 Aug, 9:30 PM What is avalabile : Food / Water, Shelter Who to contact: @SubOrchestrator How to Contact: @SubOrchestrator how many people for this: 4-9</div>')[0];
+                popup_c9430bd0bc144030a0436899f0c5baa6.setContent(html_5d4330d5a81a4716bf034c5899940fdb);
+            
+
+            marker_364f390a75724f10946659f7234ed82c.bindPopup(popup_c9430bd0bc144030a0436899f0c5baa6);
+
+            
+        
+    
+
+            var marker_a65cd98a46dc4421bcf10668d84a097e = L.marker(
+                [19.0590632,72.8356569],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b799ddb7cbde47fa84cfeb9b667167b7);
+            
+    
+            var popup_99e59c8e93ec45028361920cbdfdc417 = L.popup({maxWidth: '300'});
+
+            
+                var html_c6ec925718df48ab96b4083b15fada60 = $('<div id="html_c6ec925718df48ab96b4083b15fada60" style="width: 100.0%; height: 100.0%;">Location: Turner Road, Bandra West, Mumbai, Maharashtra 400050, India Time: 29 Aug, 9:29 PM What is avalabile : Food / Water Who to contact: 9820421332 How to Contact: 9820421332 how many people for this: 5</div>')[0];
+                popup_99e59c8e93ec45028361920cbdfdc417.setContent(html_c6ec925718df48ab96b4083b15fada60);
+            
+
+            marker_a65cd98a46dc4421bcf10668d84a097e.bindPopup(popup_99e59c8e93ec45028361920cbdfdc417);
+
+            
+        
+</script>
