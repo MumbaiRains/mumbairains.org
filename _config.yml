@@ -1,0 +1,32 @@
+title: "#MumbaiRains"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mumbairains.org" # the base hostname & protocol for your site, e.g. http://example.com
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - .git
+  - .sass_cache
+  - node_modules
+  - _site
+  - tests
+  - vendor
+  - .DS_Store
+  - configs
+  - deploy
+  - requirements.txt
+  - README.md
+
+timezone: Asia/Calcutta
+webrick:
+  headers:
+    Access-Control-Allow-Origin: '*'
+
+sass_dir: _sass
+
+liquid:
+  error_mode: strict
