@@ -9,4 +9,4 @@ branches:
 after_success: ./deploy/deploy.sh
 env:
   global:
-  - GH_REF: github.com/mumbairains/mumbairains.git
+  - GH_REF: github.com/mumbairains/mumbairains.org.git
