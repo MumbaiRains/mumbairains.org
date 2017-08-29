@@ -5,10 +5,10 @@ var async = require('async');
 
 var sheets = [
   {
-    name: "#RainHosts",
+    name: "Shelter-Food",
     url: 'https://docs.google.com/spreadsheets/d/1lNF2JFoDR3uQ8-dDQHUXvD_7ZYDyCFyRwLNsrzoZwIs/edit?usp=sharing',
-    api: 'rainhosts.json',
-    sheetName: "#RainHosts",
+    api: 'shelter-food.json',
+    sheetName: "Shelter/Food",
   },
   {
     name: "Contacts",
