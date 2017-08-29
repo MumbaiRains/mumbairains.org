@@ -121,11 +121,19 @@
     var getRows = function(obj) {
       var rows=obj['rows'];
       var idx = obj['columns'].indexOf("tweetid");
-      var new_rows = []
+      var new_rows = [];
+      var idxDate = obj['columns'].indexOf("date");
+
       for (var i = 0; i < rows.length; i++) {
         if(rows[i][idx].length>0) {
           var row = '<a href="https://twitter.com/karthikb351/status/'+rows[i][idx]+'">Tweet link</a>';
           rows[i][idx]=row;
+        }
+         //Format Date
+        if(rows[i][idxDate].length>0) {
+
+          rows[i][idxDate]=formatDate(rows[i][idxDate]);
+
         }
 
         var c = []
@@ -189,6 +197,28 @@
 
 
     });
+
+     /**
+     *
+     * Helper function to format date
+     *
+     */
+    
+    function formatDate(dateString) {
+      var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      var date = new Date(dateString);
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+  
+      var strTime = date.getDate()+" "+monthNames[date.getMonth()]+", "+hours + ':' + minutes + ' ' + ampm;
+      return strTime;
+    }
+
     </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
