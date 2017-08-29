@@ -65,7 +65,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="dataTable_wrapper table-responsive">
@@ -73,6 +73,17 @@
                                   <h1 id="loading">Fetching data</h1>
                                 </table>
                             </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="map_canvas" style="width:100%;height:500px;"></div>
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -105,6 +116,8 @@
 
     <!-- DataTables JavaScript -->
     <script type="text/javascript" src="https://cdn.datatables.net/s/bs-3.3.5/jq-2.1.4,dt-1.10.10,r-2.0.0/datatables.min.js"></script>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBkq0bx00nhzbJjMmzOCQFqeGUdU-F4814"></script>
 
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
@@ -183,6 +196,74 @@
         $("#searchbox").on("keyup search input paste cut", function() {
          dataTable.search(this.value).draw();
        });
+
+        var map;
+        var elevator;
+        var myOptions = {
+            zoom: 1,
+            center: new google.maps.LatLng(0, 0),
+            mapTypeId: 'terrain'
+        };
+
+        map = new google.maps.Map($('#map_canvas')[0], myOptions);
+
+
+        var rows = dataSet['rows'];
+
+        var bounds = new google.maps.LatLngBounds ();
+
+        var infowindows = [];
+        var markers = [];
+        infowindow_id = 0;
+
+        function add_marker(row) {
+          return function (data) {
+              if (data.results.length == 0) {
+                return
+              }
+              var p = data.results[0].geometry.location
+              var latlng = new google.maps.LatLng(p.lat, p.lng);
+              var marker = new google.maps.Marker({
+                  position: latlng,
+                  map: map,
+                  title: row[1],
+                  infowindow_id: infowindow_id
+              });
+
+              ["Time", "Location", "What is available", "Who to contact", "How to contact", "How many people is this for"];
+
+              var content = "<b>Location</b>: "+row[2]+"<br>"
+              +"<b>What is available</b>: "+row[1]+"<br>"
+              +"<b>Who to contact</b>: "+row[3]+"<br>"
+              +"<b>How to contact</b>: "+row[4]+"<br>"
+              +"<b>How many people is this for</b>: "+row[7]+"<br>";
+
+              var infowindow = new google.maps.InfoWindow();
+              infowindow.setContent(content);
+
+              google.maps.event.addListener(marker, 'click',
+                  function(event)
+                  {
+                      infowindows[this.infowindow_id].open(map, this);
+                      console.log(this.infowindow_id);
+                  }
+              );
+
+              infowindows.push(infowindow);
+              markers.push(marker);
+              infowindow_id++;
+              bounds.extend(latlng);
+          };
+        }
+
+        for (var x = 0; x < rows.length; x++) {
+            row = rows[x]
+            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?components=locality:Mumbai&address='+row[2]+'', null, add_marker(row));
+        }
+
+    		map.fitBounds(bounds);
+
+
       })
       .error(function() {
        $('#loading').text('An error occurred');

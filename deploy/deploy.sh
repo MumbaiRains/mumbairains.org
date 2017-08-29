@@ -8,6 +8,7 @@ then
   node deploy/build.js
 
 
+  rm -rf .git
   git init
 
   # inside this git repo we'll pretend to be a new user
