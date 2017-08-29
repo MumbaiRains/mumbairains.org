@@ -5,10 +5,16 @@ var async = require('async');
 
 var sheets = [
   {
+    name: "#RainHosts",
+    url: 'https://docs.google.com/spreadsheets/d/1lNF2JFoDR3uQ8-dDQHUXvD_7ZYDyCFyRwLNsrzoZwIs/edit?usp=sharing',
+    api: 'rainhosts.json',
+    sheetName: "#RainHosts",
+  },
+  {
     name: "Contacts",
     url: 'https://docs.google.com/spreadsheets/d/1lNF2JFoDR3uQ8-dDQHUXvD_7ZYDyCFyRwLNsrzoZwIs/edit?usp=sharing',
-    api: 'updates.json',
-    sheetName: "#RainHosts",
+    api: 'contacts.json',
+    sheetName: "Emergency",
   }
 ];
 

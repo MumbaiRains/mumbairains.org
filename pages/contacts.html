@@ -1,3 +1,6 @@
+---
+permalink: /contacts/
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,9 +58,10 @@
                 <a class="navbar-brand" href="index.html">#MumbaiRains Resource Center</a>
             </div>
             <ul class="nav navbar-nav navbar-left">
-              <li class="active"><a href="/">#RainHosts</a></li>
-              <li><a href="contacts">Emergency Contacts</a></li>
+              <li><a href="/">#RainHosts</a></li>
+              <li class="active"><a href="contacts">Emergency Contacts</a></li>
             </ul>
+            <!-- /.navbar-top-links -->
         </nav>
 
         <div id="page-wrapper">
@@ -132,7 +136,7 @@
       var rows=obj['rows'];
       var idx = obj['columns'].indexOf("tweetid");
       for (var i = 0; i < rows.length; i++) {
-        if(rows[i][idx].length>0) {
+        if(rows[i][idx] && rows[i][idx].length>0) {
           var row = '<a href="https://twitter.com/karthikb351/'+rows[i][idx]+'">Tweet link</a>';
           rows[i][idx]=row;
         }
@@ -159,18 +163,17 @@
       var temp = obj['columns'];
       var columns = [];
       for (var i = 0; i < temp.length; i++) {
-        if (inArray(temp[i], ["date","screenname","tweettext","tweetid","offeredlocation"]))
-          columns.push({
-            title:temp[i],
-            "sWidth": getColumnWidth(i)
-          });
+        columns.push({
+          title:temp[i],
+          "sWidth": getColumnWidth(i)
+        });
       }
       console.log(columns);
       return columns;
     }
 
     $(document).ready(function() {
-      $.getJSON("/api/rainhosts.json", function(data) {
+      $.getJSON("/api/contacts.json", function(data) {
         dataSet = data;
         $('#loading').hide();
         var dataTable = $('#dataTables-example').DataTable( {
