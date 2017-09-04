@@ -1,0 +1,101 @@
+---
+---
+
+{% if page.description %}
+  {% assign description = page.description %}
+{% else %}
+  {% assign description = site.description %}
+{% endif %}
+
+{% if page.meta.image %}
+  {% assign image = page.meta.image %}
+{% else %}
+  {% assign image = site.meta.image %}
+{% endif %}
+
+{% if page.meta.favicon %}
+  {% assign favicon = page.meta.favicon %}
+{% elsif site.meta.favicon %}
+  {% assign favicon = site.meta.favicon %}
+{% else %}
+  {% assign favicon = "images/hg-favicon.ico" %}
+{% endif %}
+
+{% if image contains "://" %}
+{% else %}
+  {% assign image = image | absolute_url %}
+{% endif %}
+
+{% if favicon contains "://" %}
+{% else %}
+  {% assign favicon = favicon | absolute_url %}
+{% endif %}
+
+{% if page.title %}
+  {% if page.title contains site.title %}
+    {% capture title %}{{ page.title }}{% endcapture %}
+  {% else %}
+    {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+  {% endif %}
+{% else %}
+  {% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en" class="svg inlinesvg">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    {% if site.colors %}
+    <meta name="theme-color" content="{{ site.colors.primary }}"/>
+    {% else %}
+    <meta name="theme-color" content="#826995"/>
+    {% endif %}
+
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <link rel="shortcut icon" href="{{ favicon }}" />
+    <link rel="author" href="https://plus.google.com/{{googlePlusId}}" />
+    {% if page.canonical %}
+      {% if page.canonical contains "://" %}
+      {% else %}
+        {% assign page.canonical = page.canonical | absolute_url %}
+      {% endif %}
+    <link rel="canonical" href="{{ page.canonical }}" />
+    {% endif %}
+
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:image" content="{{ image }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:see_also" content="{{ site.url }}{{ site.baseurl }}">
+    <meta property="og:type" content="website">
+
+    <meta itemprop="name" content="{{ title }}">
+    <meta itemprop="description" content="{{ description }}">
+    <meta itemprop="image" content="{{ image }}">
+
+    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ image }}">
+
+
+    {% if site.icons.touch %}
+    <link rel="manifest" href="{{ site.url }}{{ site.baseurl }}/manifest.json">
+    {% endif %}
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/main.css">
+</head>
+<body>
+
+  {{ content }}
+
+  {% include analytics.html ga_tracking_code=site.ga_tracking_code %}
+
+
+</body>
+</html>
