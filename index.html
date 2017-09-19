@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>#MumbaiRains Resource Center</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/bs-3.3.5/jq-2.1.4,dt-1.10.10,r-2.0.0/datatables.min.css"/>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      .dataTables_filter {
+         display: none;
+      }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">#MumbaiRains Resource Center</a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+              <li class="active"><a href="/">Shelter/Food/Water</a></li>
+              <li><a href="contacts">Emergency Contacts</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div id="page-wrapper" class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Shelter/Food/Water available <a role="button" class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdpRSNQNpuctlHxNmlDdVkDc2bTccgkyXjowdJR2iwhjmmuOA/viewform" target="_blank">I want to offer food/shelter</a></h1>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="map_canvas" style="width:100%;height:500px;"></div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-6">
+                  <div class="well">
+                        <p></p>
+                        <div class="input-group input-group-lg">
+                          <span class="input-group-addon" id="sizing-addon1">Search</span>
+                          <input type="text" class="form-control" placeholder="Eg. Malad, Chembur" id="searchbox" aria-describedby="sizing-addon1">
+                        </div>
+                  </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                  <h1 id="loading">Fetching data</h1>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <footer>
+      <div class="container" style="margin-top:20px;">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p><a href="https://github.com/mumbairains/mumbairains.org">To Mumbai, with <span class="glyphicon glyphicon-heart" style="color:red"></span></a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- DataTables JavaScript -->
+    <script type="text/javascript" src="https://cdn.datatables.net/s/bs-3.3.5/jq-2.1.4,dt-1.10.10,r-2.0.0/datatables.min.js"></script>
+
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBkq0bx00nhzbJjMmzOCQFqeGUdU-F4814"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    var dataSet;
+    var getKeys = function(obj) {
+      var keys = [];
+      for(var key in obj){
+          keys.push(key);
+       }
+      return keys;
+    };
+
+    var getRows = function(obj) {
+      var rows=obj['rows'];
+      var new_rows = [];
+      var idxDate = obj['columns'].indexOf("timestamp");
+
+      for (var i = 0; i < rows.length; i++) {
+         //Format Date
+        if(rows[i][idxDate].length>0) {
+
+          rows[i][idxDate]=formatDate(rows[i][idxDate]);
+
+        }
+
+        var c = []
+        for (var x = 0; x < rows[i].length; x++) {
+          if (inArray(x, [0,1,2,3,5,6])) {
+            c.push(rows[i][x])
+          }
+        }
+        new_rows.push(c);
+      };
+      return new_rows;
+    };
+
+    function inArray(obj, arr) {
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i]==obj) {
+            return true;
+        }
+      }
+      return false;
+    }
+
+    var getColumnWidth = function(obj) {
+      var widths = ["10%","25%","15%","20%","20%","15%"]
+      return widths[obj];
+    }
+
+    var getColumns = function(obj) {
+      var temp = ["Time", "What is available", "How many people is this for", "Location", "Who to contact", "How to contact"];
+      var columns = [];
+      for (var i = 0; i < temp.length; i++) {
+        columns.push({
+          title:temp[i],
+          "sWidth": getColumnWidth(i)
+        });
+      }
+      return columns;
+    }
+
+    $(document).ready(function() {
+      $.getJSON("/api/shelter-food.json", function(data) {
+        dataSet = data;
+        $('#loading').hide();
+        var dataTable = $('#dataTables-example').DataTable( {
+          data: getRows(data),
+          columns: getColumns(data),
+          "pageLength": 100,
+          responsive: false,
+          order: ['0', 'desc']
+        } );
+        $("#searchbox").on("keyup search input paste cut", function() {
+         dataTable.search(this.value).draw();
+       });
+
+        var map;
+        var elevator;
+        var myOptions = {
+            zoom: 1,
+            center: new google.maps.LatLng(0, 0),
+            mapTypeId: 'terrain'
+        };
+
+        map = new google.maps.Map($('#map_canvas')[0], myOptions);
+
+
+        var rows = dataSet['rows'];
+
+        var bounds = new google.maps.LatLngBounds ();
+
+        var infowindows = [];
+        var markers = [];
+        infowindow_id = 0;
+
+        function add_marker(row) {
+          return function (data) {
+              if (data.results.length == 0) {
+                return
+              }
+              var p = data.results[0].geometry.location
+              var latlng = new google.maps.LatLng(p.lat, p.lng);
+              var marker = new google.maps.Marker({
+                  position: latlng,
+                  map: map,
+                  title: row[1],
+                  infowindow_id: infowindow_id
+              });
+
+              ["Time", "What is available", "How many people is this for", "Location", "Who to contact", "How to contact"];
+
+              var content = "<b>Location</b>: "+row[3]+"<br>"
+              +"<b>What is available</b>: "+row[1]+"<br>"
+              +"<b>Who to contact</b>: "+row[4]+"<br>"
+              +"<b>How to contact</b>: "+row[5]+"<br>"
+              +"<b>How many people is this for</b>: "+row[2]+"<br>";
+
+              var infowindow = new google.maps.InfoWindow();
+              infowindow.setContent(content);
+
+              google.maps.event.addListener(marker, 'click',
+                  function(event)
+                  {
+                      infowindows[this.infowindow_id].open(map, this);
+                      console.log(this.infowindow_id);
+                  }
+              );
+
+              infowindows.push(infowindow);
+              markers.push(marker);
+              infowindow_id++;
+              bounds.extend(latlng);
+          };
+        }
+
+        for (var x = 0; x < rows.length; x++) {
+            row = rows[x]
+            $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?components=locality:Mumbai&address='+row[2]+'', null, add_marker(row));
+        }
+
+    		map.fitBounds(bounds);
+
+
+      })
+      .error(function() {
+       $('#loading').text('An error occurred');
+     });
+
+
+    });
+
+     /**
+     *
+     * Helper function to format date
+     *
+     */
+
+    function formatDate(dateString) {
+      var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      var date = new Date(dateString);
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+
+      var strTime = date.getDate()+" "+monthNames[date.getMonth()]+", "+hours + ':' + minutes + ' ' + ampm;
+      return strTime;
+    }
+
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-105607004-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+</body>
+
+</html>
